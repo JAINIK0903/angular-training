@@ -1,0 +1,46 @@
+#email {
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+.inputfield {
+    position: relative;
+  }
+  .input {
+    position: relative;
+    height: 50px;
+    width: 95.5%;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 10px;
+    gap: 2rem;
+    margin-top: 5px;
+    margin-left: 2.1%;
+  }
+  
+  #emailerror {
+    padding-left: 10px;
+    margin-top: 10px;
+    color: red;
+  }
+  .submit {
+    display: flex;
+    margin-inline:auto;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .submit:hover {
+    background-color: green;
+    color: white;
+  }
+  .form-lable{
+    padding-left: 20px;
+  }

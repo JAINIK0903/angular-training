@@ -1,0 +1,18 @@
+.cstm-height-card .card-img-top {
+  height: 100px;
+  object-fit: cover;
+}
+.col-md-4{
+  margin-top: 10px;
+}
+.card{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 20px;
+  gap:2rem;
+  height: 100%;
+  width: 280%;
+}
+li{
+  list-style-type: none;
+}
