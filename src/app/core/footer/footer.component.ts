@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
+  //date
+  year = new Date().getFullYear();
+
   //email validation
   public email: string = '';
   public patternForEmail: RegExp =
