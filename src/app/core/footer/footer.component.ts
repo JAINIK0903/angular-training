@@ -7,12 +7,5 @@ import { EmailValidator } from '@angular/forms';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  subscribe() {
-    if(EmailValidator){
-      alert("You are now subscriber");
-    }
-    else {
-      alert("please enter you email");
-    }
-  }
+
 }

@@ -111,14 +111,13 @@
       </div>
     </section>
     <!-- Section: Links  -->
-    <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please enter your email" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="subscribe()">Subscribe</button>
-      </form>
+    <form class="needs-validation" novalidate>
+      <div class="form-outline">
+          <label for="validationCustom01" class="form-label">Email</label>
+          <input type="email" class="form-control" id="validationCustom01" required />
+      </div>
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+  </form>
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
       © 2023 Copyright:

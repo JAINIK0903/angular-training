@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-5">
+            <div class="card">
+                <ng-container *ngIf="books.length >0">
+                    <li *ngFor="let book of books">
+                        <img src="{{book.thumbnailUrl}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">"{{book.title}}"</h5>
+                            <p class="card-text">"{{book.shortDescription}}"</p>
+                            <button class="btn btn-sm btn-primary">Readmore></button>
+                        </div>
+                    </li>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
