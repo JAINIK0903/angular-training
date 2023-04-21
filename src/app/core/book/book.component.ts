@@ -3,11 +3,11 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
 })
 export class BookComponent {
   @Input() book: any;
   displayBookTitle = (title: string) => {
     console.log(title);
- }
-  }
+  };
+}
