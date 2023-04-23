@@ -4,7 +4,7 @@
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
+      <span>{{socialmediaInfo}}</span>
     </div>
     <!-- Left -->
 
@@ -113,7 +113,7 @@
   <div class="container ">
     <div class="form-outline text-center form-white mb-4">
       <input type="email" id="form5Example21" class="form-control" placeholder="Enter your email" name="email"
-        [(ngModel)]="email" [value]="email" />
+        [(ngModel)]="email" [value]="email"  maxlength="40"/>
       <p>{{ email }}</p>
     </div>
     <div class="col-auto">

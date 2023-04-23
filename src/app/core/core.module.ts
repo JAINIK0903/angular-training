@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 // components
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MainComponent } from './main/main.component';
+import { BookListComponent} from './book-list/book-list.component';
 import { BookComponent } from './book/book.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -14,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    MainComponent,
+    BookListComponent,
     BookComponent,
     FooterComponent,
   ],
@@ -22,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     HeaderComponent,
     SidebarComponent,
-    MainComponent,
+    BookListComponent,
     BookComponent,
     FooterComponent,
   ],

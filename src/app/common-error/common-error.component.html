@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="main">
+        <h1>{{ title }}</h1>
+        <form action="#">
+            <input type="text" placeholder="Enter New Task" maxlength="40" [(ngModel)]="newTask"
+                [ngModelOptions]="{standalone: true}" required>
+            <br><br>
+            <button (click)="addTask()">{{addButton}}</button>
+        </form>
+        <ul *ngFor="let item of list">
+            <li>
+                {{item.name}}
+                <button (click)="deleteTask(item.id)" type="submit" class="delete">{{deleteButton}}</button>
+            </li>
+        </ul>
+    </div>
+</div>

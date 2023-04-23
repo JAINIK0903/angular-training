@@ -6,8 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./book.component.scss'],
 })
 export class BookComponent {
-  @Input() book: any;
-  displayBookTitle = (title: string) => {
+  readMore:string = 'Read more>';
+  @Input() book: any ;
+  public displayBookTitle = (title: string) => {
     console.log(title);
   };
 }

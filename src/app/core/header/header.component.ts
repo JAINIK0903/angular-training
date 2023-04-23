@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navItems: Array<string> = [
+  public brandName:string = 'Bookshop';
+  public menuItems = [
+    { label: 'Dashboard', action: this.clickMe },
+    { label: "Today's Deal", action: this.clickMe },
+    { label: 'Mobile', action: this.clickMe },
+    { label: 'Electronics', action: this.clickMe },
+    { label: 'Customer Service', action: this.clickMe },
+    { label: 'About', action: this.clickMe }
+  ];
+  public navItems: Array<string> = [
     'Dashboard',
     'Today`s Deal',
     'Mobile',
@@ -15,7 +24,7 @@ export class HeaderComponent {
     'About',
   ];
 
-  clickMe() {
+  public clickMe() {
     console.log('navItems:', this.navItems);
   }
 }

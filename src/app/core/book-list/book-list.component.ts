@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.scss'],
 })
-export class MainComponent {
-  books: any[] = [
+export class BookListComponent {
+  public readMoreButton:string = "Read More>";
+  public books: any[] = [
     {
       title: 'Unlocking Android',
       thumbnailUrl:
