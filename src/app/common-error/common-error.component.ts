@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-common-error',
@@ -10,17 +11,19 @@ export class CommonErrorComponent {
   addButton = 'Add Task';
   deleteButton = 'Delete';
   newTask!: string;
-  list: { id: number, name: string }[] = [];
+
+  constructor(private todoService: TodoService) {}
 
   addTask() {
-    if (this.newTask) {
-      const newId = this.list.length + 1;
-      this.list.push({ id: newId, name: this.newTask });
-      this.newTask = '';
-    }
+    this.todoService.addTask(this.newTask);
+    this.newTask = '';
   }
 
   deleteTask(id: number) {
-    this.list = this.list.filter(item => item.id !== id);
+    this.todoService.deleteTask(id);
+  }
+
+  get list() {
+    return this.todoService.getList();
   }
 }
