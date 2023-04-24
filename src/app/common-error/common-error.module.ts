@@ -13,7 +13,7 @@ import { MyAttributeDirectiveDirective } from './my-attribute-directive.directiv
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
   ],

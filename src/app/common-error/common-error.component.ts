@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoService } from './todo.service';
+import { TodoService } from './service/todo.service';
 
 @Component({
   selector: 'app-common-error',
@@ -7,7 +7,7 @@ import { TodoService } from './todo.service';
   styleUrls: ['./common-error.component.scss']
 })
 export class CommonErrorComponent {
-  title = 'To-Do List App';
+  title = 'To-Do List';
   addButton = 'Add Task';
   deleteButton = 'Delete';
   newTask!: string;
