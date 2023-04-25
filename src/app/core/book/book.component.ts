@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Ibook } from '../Interface/book';
 
 @Component({
   selector: 'app-book',
@@ -6,8 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./book.component.scss'],
 })
 export class BookComponent {
-  readMore:string = 'Read more>';
-  @Input() book: any ;
+  public readMore: string = 'Read more';
+  @Input() book!: Ibook; 
   public displayBookTitle = (title: string) => {
     console.log(title);
   };

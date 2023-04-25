@@ -1,9 +1,14 @@
 <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" (click)="closeSidebar()">&times;</a>
-    <a *ngFor="let menuItem of menuItems" [href]="menuItem.link">{{ menuItem.label }}</a>
+  <a href="javascript:void(0)" class="closebtn" (click)="closeSidebar()">&times;</a>
+  <a *ngFor="let menuItem of menuItems" [href]="menuItem.link">{{ menuItem.label }}</a>
+  <div class="container" *ngFor="let filter of filters">
+    <input [type]="filter.type">
+    <label>{{filter.name}}</label>
   </div>
-  
+  <button type="submit" class="bg-success" id="btn">Apply Filters</button>
+</div>
 
 <div id="main">
-    <button class="openbtn" (click)="openSidebar()">&#9776;</button>
+  <button class="openbtn" (click)="openSidebar()" id="button">&#9776;</button>
+
 </div>

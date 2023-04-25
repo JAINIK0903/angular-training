@@ -1,61 +1,103 @@
 .sidebar {
-    height: 35%;
-    width: 0;
-    position: absolute;
-    margin-top: 58px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:blue;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
+  height: 60%;
+  width: 0;
+  position: absolute;
+  margin-top: 58px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.container {
+  margin-left: 20px;
+}
+
+label {
+  color: white;
+}
+
+#authors {
+  margin-left: 20px;
+}
+
+#authors1 {
+  margin-left: 32px;
+}
+
+#authors2 {
+  margin-left: 32px;
+}
+
+#btn {
+  margin-left: 30px;
+  margin-top: 10px;
+  border: 3px solid green;
+  color: white;
+  border-radius: 10px;
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 1.4rem;
-    color: #fff;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+  color: #f1f1f1;
 }
 
 .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .openbtn {
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: blue;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    position: relative;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  position: relative;
 }
 
 .openbtn:hover {
-    background-color: rgb(6, 6, 174);
+  background-color: rgb(6, 6, 174);
 }
-#main {
-    transition: margin-left 0.5s;
-    padding: 20px 20px 20px 0;
-}
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
-    }
 
-    .sidebar a {
-        font-size: 18px;
-    }
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px 20px 20px 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .container {
+    margin-left: 20px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+
+  #btn {
+    margin-left: 30px;
+    margin-top: 10px;
+    border: 3px solid green;
+    color: white;
+    border-radius: 10px;
+  }
 }
