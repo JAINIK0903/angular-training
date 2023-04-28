@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  public socialmediaInfo: string = "Get connected with us on social networks:";
+  public socialmediaInfo: string = 'Get connected with us on social networks:';
   //date
   public year = new Date().getFullYear();
 

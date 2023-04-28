@@ -1,0 +1,15 @@
+<h1>child works!</h1>
+
+<p>{{data1}}</p>
+<ng-content></ng-content>
+<ng-container #firstNameDiv #lastNameDiv>
+    {{firstName}} {{lastName}}
+</ng-container>
+<button (click)="clickMe()">CLICK ME</button>
+<p *ngIf="isDisplay else displayIsFalse">
+    Is display flag is true
+</p>
+
+<ng-template #displayIsFalse>
+    Is display flag is false
+</ng-template>

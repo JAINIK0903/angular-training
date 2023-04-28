@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,10 +18,6 @@ export class SidebarComponent {
     { type: 'checkbox', name: 'W. Frank Ableson' },
     { type: 'checkbox', name: 'Rob Allen' },
   ];
-  @Output() newItemEvent = new EventEmitter<string>();
-  public changeBackground = (): void => {
-    this.newItemEvent.emit();
-  };
 
   public openSidebar = (): void => {
     document.getElementById('mySidebar')!.style.width = '250px';

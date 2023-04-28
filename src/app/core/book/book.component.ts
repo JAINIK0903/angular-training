@@ -8,7 +8,7 @@ import { Ibook } from '../Interface/book';
 })
 export class BookComponent {
   public readMore: string = 'Read more';
-  @Input() book!: Ibook; 
+  @Input() book!: Ibook;
   public displayBookTitle = (title: string) => {
     console.log(title);
   };

@@ -2,7 +2,7 @@ export interface Ibook {
   title: string;
   thumbnailUrl: string;
   shortDescription: string;
-  authors: string[] | string;
+  authors: string[];
   categories: string[];
-  description: string,
+  description: string;
 }

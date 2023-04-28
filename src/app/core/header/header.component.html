@@ -7,11 +7,11 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-			  <li *ngFor="let menuItem of menuItems" class="nav-item">
-				<a class="nav-link" (click)="menuItem.action()">{{ menuItem.label }}</a>
-			  </li>
+				<li *ngFor="let menuItem of menuItems" class="nav-item">
+					<a class="nav-link" (click)="menuItem.action()">{{ menuItem.label }}</a>
+				</li>
 			</ul>
-		  </div>
-		  
+		</div>
+
 	</div>
 </nav>
