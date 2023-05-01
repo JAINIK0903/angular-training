@@ -1,0 +1,12 @@
+<div id="container">
+    <ng-container *ngFor="let colorOne of colors">
+        <button id="button" class="bg-primary" (click)="setColor(colorOne)"></button>
+        <button id="button" class="bg-dark" (click)="setColor(colorOne)"></button>
+        <ng-container *ngIf="!subscription">
+            <button (click)="subscribe()" id="btn" class="bg-primary" (click)="subscribe()">Subscribe</button>
+        </ng-container>
+        <ng-container *ngIf="subscription">
+            <button (click)="unsubscribe()" id="btn1" class="bg-danger" (click)="unsubscribe()">Unsubscribe</button>
+        </ng-container>
+    </ng-container>
+</div>

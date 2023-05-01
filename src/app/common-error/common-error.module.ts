@@ -6,6 +6,7 @@ import { CommonErrorComponent } from './common-error.component';
 import { MyAttributeDirectiveDirective } from './my-attribute-directive.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ChildComponent } from './child/child.component';
     MyAttributeDirectiveDirective,
     ParentComponent,
     ChildComponent,
+    CustomStructuralDirectiveDirective,
   ],
   imports: [CommonModule, FormsModule],
   providers: [],
