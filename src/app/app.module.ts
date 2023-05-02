@@ -7,10 +7,17 @@ import { CommonErrorModule } from './common-error/common-error.module';
 //compoments
 import { AppComponent } from './app.component';
 import { ObservableDemoModule } from './observable-demo/observable-demo.module';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CoreModule, CommonErrorModule, ObservableDemoModule],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    CommonErrorModule,
+    ObservableDemoModule,
+    ProductModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

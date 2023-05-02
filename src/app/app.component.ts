@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'book-shop';
   @ViewChild('test') test!: ElementRef;
   constructor(private renderer: Renderer2) {}
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.renderer.setStyle(this.test.nativeElement, 'backgroundColor', 'red');
     this.renderer.setStyle(this.test.nativeElement, 'color', 'white');
   }

@@ -1,0 +1,54 @@
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>{{title}}</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <!--Add product form-->
+            <div class="form-area">
+                <h3>{{sectiononeTitle}}</h3>
+                <!-- <ng-container *ngFor="let input"> -->
+                <form #productsForm="ngForm" (ngSubmit)="onProductCreate(productsForm.value)">
+                    <label>Product Name</label>
+                    <input type="text" name="productName" ngModel>
+
+                    <label>Product Description</label>
+                    <input type="text" name="Description" ngModel>
+
+                    <label>Product Price</label>
+                    <input type="text" name="price" ngModel>
+
+                    <input type="submit" value="Add Product" name="AddProduct">
+                </form>
+                <!-- </ng-container> -->
+            </div>
+
+            <!--Display product area-->
+            <div class="product-display-area">
+                <h3>{{sectiontwoTitle}}</h3>
+                <table id="products">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>iPhone</td>
+                        <td>iPhone Pro 11</td>
+                        <td>$1299</td>
+                        <td><button class="btn-delete">Delete</button></td>
+                    </tr>
+                </table>
+                <hr>
+                <div class="action-btn-container">
+                    <button class="btn-fetch">Fetch Product</button>
+                    <button class="btn-clear">Clear Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
