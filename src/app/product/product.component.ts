@@ -24,7 +24,7 @@ export class ProductComponent {
   }) {
     this.productService.createProduct(products);
     this.http
-      .get('https://jsonplaceholder.typicode.com/posts')
+      .get('https://jsonplaceholder.typicode.com/users')
       .subscribe((res) => {
         console.log(res);
       });

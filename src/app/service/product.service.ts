@@ -12,7 +12,7 @@ export class ProductService {
     // console.log(products);
     // const header = new HttpHeaders({ myHeader: 'product' });
     this.http
-      .post<any>('https://jsonplaceholder.typicode.com/posts', products)
+      .post<any>('https://jsonplaceholder.typicode.com/users', products)
       .subscribe((res) => {
         console.log(res);
       });

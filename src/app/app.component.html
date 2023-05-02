@@ -9,7 +9,7 @@
   <h1>Welcome to my app!</h1>
   <app-custom></app-custom>
 </div> -->
-<nav myAttributeDirective>
+<!-- <nav myAttributeDirective>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -22,7 +22,18 @@
 <p #test>custom attribute directive using renderer method</p>
 <p appCustomStructuralDirective>custom structural directive</p>
 <hr>
-<app-product></app-product>
+<app-product></app-product> -->
+<h1>Welcome</h1>
+<br />
+
+<ul class="nav nav-tabs">
+  <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link"
+      routerLink="/">Home</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/contact">Contact</a></li>
+  <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/aboutus']">AboutUs</a></li>
+</ul>
+<router-outlet></router-outlet>
 <!-- <app-parent-demo></app-parent-demo>
 
 <app-child-demo></app-child-demo> -->

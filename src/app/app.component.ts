@@ -7,10 +7,10 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'book-shop';
-  @ViewChild('test') test!: ElementRef;
-  constructor(private renderer: Renderer2) {}
-  ngAfterViewInit(): void {
-    this.renderer.setStyle(this.test.nativeElement, 'backgroundColor', 'red');
-    this.renderer.setStyle(this.test.nativeElement, 'color', 'white');
-  }
+  // @ViewChild('test') test!: ElementRef;
+  // constructor(private renderer: Renderer2) {}
+  // ngAfterViewInit(): void {
+  //   this.renderer.setStyle(this.test.nativeElement, 'backgroundColor', 'red');
+  //   this.renderer.setStyle(this.test.nativeElement, 'color', 'white');
+  // }
 }
