@@ -27,13 +27,42 @@
 <br />
 
 <ul class="nav nav-tabs">
-  <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link"
-      routerLink="/">Home</a>
+  <li
+    class="nav-item"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a class="nav-link" routerLink="/home">Home</a>
   </li>
-  <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/contact">Contact</a></li>
-  <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/aboutus']">AboutUs</a></li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="/contact">Contact</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/aboutus']">AboutUs</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['home/123/product-one']"
+      >ProductDetails</a
+    >
+  </li>
 </ul>
 <router-outlet></router-outlet>
+<h1>Product details component with product id called</h1>
+
+Product id from the URL: <b>{{ productId }}</b
+><br />
+Product name from the URL: <b>{{ productName }}</b>
+
+<h3>
+  <a
+    [routerLink]="['/home', '200', 'product-B']"
+    [queryParams]="{ isProductDetails: true, isAllowedEditing: false }"
+    fragment="loading"
+    >Reload page by router link</a
+  >
+</h3>
+
+<h1>404 - No Page Found For the Requested URL</h1>
 <!-- <app-parent-demo></app-parent-demo>
 
 <app-child-demo></app-child-demo> -->

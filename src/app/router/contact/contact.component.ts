@@ -17,7 +17,7 @@ export class ContactComponent {
     // handle response
     // then navigate
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 
   public goToAboutus(): void {

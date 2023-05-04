@@ -8,16 +8,12 @@ import { CommonErrorModule } from './common-error/common-error.module';
 import { AppComponent } from './app.component';
 import { ObservableDemoModule } from './observable-demo/observable-demo.module';
 import { ProductModule } from './product/product.module';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './router/home/home.component';
 import { ContactComponent } from './router/contact/contact.component';
 import { AboutUsComponent } from './router/about-us/about-us.component';
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent }, //localhost:4200 will load home component
-  { path: 'contact', component: ContactComponent }, //localhost:4200/contact will load contact component
-  { path: 'aboutus', component: AboutUsComponent }, //localhost:4200/aboutus will load aboutus component
-];
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +21,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     AboutUsComponent,
+    ProductDetailsComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,7 @@ const appRoutes: Routes = [
     CommonErrorModule,
     ObservableDemoModule,
     ProductModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

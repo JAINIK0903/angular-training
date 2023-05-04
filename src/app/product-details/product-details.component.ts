@@ -1,27 +1,14 @@
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  title = 'book-shop';
-  // @ViewChild('test') test!: ElementRef;
-  // constructor(private renderer: Renderer2) {}
-  // ngAfterViewInit(): void {
-  //   this.renderer.setStyle(this.test.nativeElement, 'backgroundColor', 'red');
-  //   this.renderer.setStyle(this.test.nativeElement, 'color', 'white');
-  // }
+export class ProductDetailsComponent implements OnInit, OnDestroy {
+  title: string = 'get product by productid';
   productId: number = 0;
   productName: string = '';
   paramsSubscription: Subscription | any;
@@ -38,6 +25,9 @@ export class AppComponent implements OnInit, OnDestroy {
         this.productName = parameters['productName'];
       }
     );
+    this.activatedRoute.queryParams.subscribe((parameters: Params) => {
+      console.log('this.activatedRoute.queryParams :- ', parameters);
+    });
   }
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
