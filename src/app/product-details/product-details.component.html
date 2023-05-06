@@ -9,3 +9,17 @@
     <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/aboutus']">AboutUs</a></li>
 </ul> -->
 <h1>{{ title }}</h1>
+<h1>Product details component with product id called</h1>
+
+Product id from the URL: <b>{{ productId }}</b
+><br />
+Product name from the URL: <b>{{ productName }}</b>
+
+<h3>
+  <a
+    [routerLink]="['/home', '200', 'product-B']"
+    [queryParams]="{ isProductDetails: true, isAllowedEditing: false }"
+    fragment="loading"
+    >Reload page by router link</a
+  >
+</h3>

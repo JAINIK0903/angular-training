@@ -14,6 +14,12 @@ import { AboutUsComponent } from './router/about-us/about-us.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsResolver } from './product-details-resolver';
+import { canDeactivateGuard } from './can-deactivate-component.service';
+import { HttpApiService } from './http-api.service';
+import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutUsComponent,
     ProductDetailsComponent,
     PageNotFoundComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +38,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ObservableDemoModule,
     ProductModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ProductDetailsResolver, HttpApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

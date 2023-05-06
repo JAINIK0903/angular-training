@@ -1,0 +1,98 @@
+<div class="container">
+    <h2>Templet driven form</h2>
+    <form class="form-horizontal" (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="form-group">
+            <label for="email" class="control-label col-sm-2">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" ngModel name="email"
+                    required email #email="ngModel">
+            </div>
+            <span class="ML15 color-red" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" ngModel name="pwd"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <label for="location">Location: </label>
+                <select class="form-control" name="location" id="location" [(ngModel)]='location'>
+                    <option value="AHD">Ahmedabad</option>
+                    <option value="BRD">Baroda</option>
+                    <option value="RJT">Rajkot</option>
+                </select>
+            </div>
+        </div>
+        <p><b> {{location}} </b></p>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <label for="gender">Gender: </label>
+                <!-- <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="male" ngModel>
+              <label class="form-check-label" for="male">
+                    Male
+                  </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female" ngModel>
+              <label class="form-check-label" for="female">
+                    Female
+                  </label>
+            </div> -->
+
+                <div class="form-check" *ngFor="let gender of genders">
+                    <input class="form-check-input" type="radio" name="gender" [id]="gender" [value]="gender" ngModel>
+                    <label class="form-check-label" [for]="gender">
+                        {{gender}}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox" ngModel name="remember"> Remember me</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" (click)="setValueMethod()">Fill form using Set Value
+                    method</button>
+                <button type="button" class="btn btn-default" (click)="patchValueMethod()">Fill input using Patch Value
+                    method</button>
+            </div>
+        </div>
+
+        <hr>
+        <hr>
+
+        <div class="row" *ngIf="submitted">
+            <div class="col-xs-12">
+                <h4>Your Data</h4>
+                <p>Email ID: {{user.emailId}}</p>
+                <p>Password: {{user.password}}</p>
+                <p>Location: {{user.location}}</p>
+                <p>Gender: {{user.gender}}</p>
+                <p>Remember Me: {{user.rememberMe}}</p>
+            </div>
+        </div>
+
+    </form>
+
+</div>
