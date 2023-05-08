@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Injectable, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateComponentService } from '../can-deactivate-component.service';
@@ -16,6 +16,7 @@ export class ProductDetailsComponent
   productName: string = 'product-one';
   paramsSubscription: Subscription | any;
   changeSaved: boolean = false;
+  subscription!: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute) {}
   ngOnInit() {
@@ -32,7 +33,7 @@ export class ProductDetailsComponent
     // this.activatedRoute.queryParams.subscribe((parameters: Params) => {
     //   console.log('this.activatedRoute.queryParams :- ', parameters);
     // });
-    this.activatedRoute.data.subscribe((data: Data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data: Data) => {
       console.log('Data coming from the resolver', data['firstresolver']);
     });
   }
@@ -47,4 +48,7 @@ export class ProductDetailsComponent
   // ngOnDestroy() {
   //   this.paramsSubscription.unsubscribe();
   // }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

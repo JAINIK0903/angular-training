@@ -21,7 +21,7 @@ export class canDeactivateGuard
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
+  ): Observable<boolean> | Promise<any> | boolean {
     return component.canDeactivate();
   }
 }
