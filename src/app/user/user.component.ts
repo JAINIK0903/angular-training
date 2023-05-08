@@ -35,7 +35,9 @@ export class UserComponent implements OnInit {
     this.user.location = this.firstTdForm.value.location;
     this.user.gender = this.firstTdForm.value.gender;
     this.user.rememberMe = this.firstTdForm.value.remember;
+  }
 
+  reset() {
     this.firstTdForm.reset();
   }
 
