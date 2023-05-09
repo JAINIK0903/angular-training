@@ -39,6 +39,7 @@ export class UserComponent implements OnInit {
 
   reset() {
     this.firstTdForm.reset();
+    this.submitted = false;
   }
 
   setValueMethod() {

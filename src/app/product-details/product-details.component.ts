@@ -1,4 +1,4 @@
-import { Component, Injectable, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { CanDeactivateComponentService } from '../can-deactivate-component.service';

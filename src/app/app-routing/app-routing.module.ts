@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../router/home/home.component';
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     component: HomeComponent,
     // canActivate: [AuthGuard],
     // canActivateChild: [childAuthGuard],
-    canDeactivate: [canDeactivateGuard],
+    canDeactivate: [() => inject(canDeactivateGuard)],
     resolve: { firstResolver: ProductDetailsResolver },
     children: [
       { path: ':productId/:productName', component: ProductDetailsComponent },

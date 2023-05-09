@@ -20,6 +20,8 @@ import { canDeactivateGuard } from './can-deactivate-component.service';
 import { HttpApiService } from './http-api.service';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormDemoComponent } from './form-demo/reactive-form-demo/reactive-form-demo.component';
+import { FormDemoModule } from './form-demo/form-demo.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FormDemoModule,
   ],
   providers: [ProductDetailsResolver, HttpApiService],
   bootstrap: [AppComponent],
