@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'mtoCm',
 })
 export class FilterPipe implements PipeTransform {
-  transform(value: number, ...args: number[]) {
+  transform(value: number) {
     return value * 100;
   }
 }
