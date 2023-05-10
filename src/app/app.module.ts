@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormDemoComponent } from './form-demo/reactive-form-demo/reactive-form-demo.component';
 import { FormDemoModule } from './form-demo/form-demo.module';
 import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
+import { HttpDemoModule } from './http-demo/http-demo.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
     FormsModule,
     FormDemoModule,
     PipeDemoModule,
+    HttpDemoModule,
   ],
   providers: [ProductDetailsResolver, HttpApiService],
   bootstrap: [AppComponent],
