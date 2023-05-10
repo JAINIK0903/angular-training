@@ -11,7 +11,7 @@
     <input class="input" type="text" placeholder="Search by Name" [(ngModel)]="filterText">
 </div>
 
-<table class="table" border="2px">
+<table class="table" border="2px" *ngIf="(students| filterstudentPipe:filterText).length > 0 else noData">
     <tr>
         <th>Name</th>
         <th>Course</th>
@@ -27,3 +27,7 @@
         <td>{{student.gender | lowercase}}</td>
     </tr>
 </table>
+
+<ng-template #noData>
+    <p>No data Found</p>
+</ng-template>
