@@ -7,3 +7,23 @@
 <p class="text-center"> {{ decimal | number:'2.1-3'}}</p>
 <p class="text-center"> {{ percent | percent}}</p>
 <p class="text-center">convert meter to centimeter: {{ number | mtoCm}}</p>
+<div>
+    <input class="input" type="text" placeholder="Search by Name" [(ngModel)]="filterText">
+</div>
+
+<table class="table" border="2px">
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Marks</th>
+        <th>DOB</th>
+        <th>Gender</th>
+    </tr>
+    <tr *ngFor="let student of students | filterstudentPipe:filterText">
+        <td>{{student.name}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.marks}}</td>
+        <td>{{student.DOB | date:'fullDate' | uppercase}}</td>
+        <td>{{student.gender | lowercase}}</td>
+    </tr>
+</table>

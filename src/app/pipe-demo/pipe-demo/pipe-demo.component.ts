@@ -14,4 +14,29 @@ export class PipeDemoComponent {
   decimal: number = 40.43333;
   percent: number = 0.5;
   number: number = 5;
+  marks: number = 3;
+  filterText: string = '';
+  students: Array<any> = [
+    {
+      name: 'Jainik',
+      course: 'web developement',
+      marks: '89',
+      DOB: '03/09/2002',
+      gender: 'male',
+    },
+    {
+      name: 'Mohit',
+      course: 'Python and Datascience',
+      marks: '90',
+      DOB: '02/10/2002',
+      gender: 'male',
+    },
+    {
+      name: 'Nirmit',
+      course: 'web developement',
+      marks: '92',
+      DOB: '09/05/2001',
+      gender: 'male',
+    },
+  ];
 }
