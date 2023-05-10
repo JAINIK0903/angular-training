@@ -22,6 +22,7 @@ import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormDemoComponent } from './form-demo/reactive-form-demo/reactive-form-demo.component';
 import { FormDemoModule } from './form-demo/form-demo.module';
+import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FormDemoModule } from './form-demo/form-demo.module';
     HttpClientModule,
     FormsModule,
     FormDemoModule,
+    PipeDemoModule,
   ],
   providers: [ProductDetailsResolver, HttpApiService],
   bootstrap: [AppComponent],

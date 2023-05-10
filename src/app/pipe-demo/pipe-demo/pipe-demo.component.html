@@ -1,0 +1,9 @@
+<p class="text-center">The hero's birthday is {{ birthday | date }}</p>
+<!-- <p class="text-center">The hero's birthday is {{ birthday | date:'dd/MM/YYYY' }}</p> -->
+<p class="text-center"> {{ name | uppercase }}</p>
+<p class="text-center"> {{ args | titlecase }}</p>
+<p class="text-center"> {{ value | lowercase }}</p>
+<p class="text-center"> {{ currency | currency:'INR' }}</p>
+<p class="text-center"> {{ decimal | number:'2.1-3'}}</p>
+<p class="text-center"> {{ percent | percent}}</p>
+<p class="text-center">convert meter to centimeter: {{ number | mtoCm}}</p>
