@@ -13,7 +13,7 @@ export class PipeDemoComponent {
   currency: number = 50;
   decimal: number = 40.43333;
   percent: number = 0.5;
-  number: number = 5;
+  meter: number = 5;
   marks: number = 3;
   filterText: string = '';
   students: Array<any> = [
