@@ -60,7 +60,7 @@ export class HttpDemoComponent {
 
   public updateUser(userForm: NgForm): void {
     const users = userForm.value;
-    this.http.patch(env.baseUrl + 'user.json', users).subscribe({
+    this.http.put(env.baseUrl + 'user.json', users).subscribe({
       next: (response) => {
         console.log(response);
         // this.userForm.reset();
@@ -73,12 +73,14 @@ export class HttpDemoComponent {
 
   public deleteUser(userForm: NgForm): void {
     const user = userForm.value;
-    this.http
-      .delete(env.baseUrl + 'user/-NV5LvrGxxA-b12pGna7.json', user)
-      .subscribe({
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.http.delete(env.baseUrl + 'user.json', user).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.userForm.reset();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }

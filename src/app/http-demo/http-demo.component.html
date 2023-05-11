@@ -20,17 +20,19 @@
             </label>
         </div>
         <!-- Form Actions -->
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Add User</button>
-        </div>
-        <div class="form-actions">
-            <button class="btn btn-primary" (click)="updateUser(userForm)">Update User</button>
-        </div>
-        <div class="form-actions">
-            <button class="btn btn-primary" (click)="deleteUser(userForm)">Delete User</button>
+        <div class="container">
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" (click)="updateUser(userForm)">Update User</button>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-danger" (click)="deleteUser(userForm)">Delete User</button>
+            </div>
         </div>
     </form>
-    <div class="">
+    <div class="text">
         <div *ngFor="let user of users">
             <p>{{ user.name }}</p>
             <p>{{ user.role }}</p>
