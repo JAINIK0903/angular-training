@@ -31,11 +31,6 @@ export class HttpDemoComponent {
             let obj = { id, ...val };
             userList.push(obj);
           });
-          // for (const key in res) {
-          //   if (res.hasOwnProperty(key)) {
-          //     heroList.push({ ...res[key], id: key });
-          //   }
-          // }
           return userList;
         })
       )
@@ -65,23 +60,21 @@ export class HttpDemoComponent {
 
   public updateUser(userForm: NgForm): void {
     const users = userForm.value;
-    this.http
-      .patch(env.baseUrl + 'user/-NV5IumUYxsrHbKL8svJ.json', users)
-      .subscribe({
-        next: (response) => {
-          console.log(response);
-          // this.userForm.reset();
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.http.patch(env.baseUrl + 'user.json', users).subscribe({
+      next: (response) => {
+        console.log(response);
+        // this.userForm.reset();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   public deleteUser(userForm: NgForm): void {
     const user = userForm.value;
     this.http
-      .delete(env.baseUrl + 'user/-NV5Jow7Pft5CnDPKjVM.json', user)
+      .delete(env.baseUrl + 'user/-NV5LvrGxxA-b12pGna7.json', user)
       .subscribe({
         error: (error) => {
           console.log(error);
