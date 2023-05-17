@@ -24,6 +24,7 @@ import { ReactiveFormDemoComponent } from './form-demo/reactive-form-demo/reacti
 import { FormDemoModule } from './form-demo/form-demo.module';
 import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
 import { HttpDemoModule } from './http-demo/http-demo.module';
+import { OperatorsDemoModule } from './operators-demo/operators-demo.module';
 
 @NgModule({
   declarations: [
@@ -33,13 +34,14 @@ import { HttpDemoModule } from './http-demo/http-demo.module';
     AboutUsComponent,
     ProductDetailsComponent,
     PageNotFoundComponent,
-    UserComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     CoreModule,
     CommonErrorModule,
     ObservableDemoModule,
+    OperatorsDemoModule,
     ProductModule,
     AppRoutingModule,
     HttpClientModule,
@@ -51,4 +53,4 @@ import { HttpDemoModule } from './http-demo/http-demo.module';
   providers: [ProductDetailsResolver, HttpApiService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+<hr>
+<div class="container">
+    <button class="btn btn-primary" (click)="onClickOfOperator()">Of</button>
+    <button class="btn btn-primary" (click)="onClickOfOperatorWithList()">OfWithList</button>
+    <button class="btn btn-primary" (click)="onClickFromOperator()">From</button>
+    <button class="btn btn-primary" (click)="onClickConcatWithOperator()">ConcatWith</button>
+    <button class="btn btn-primary" (click)="onClickMergeOperator()">Merge</button>
+    <button class="btn btn-primary" (click)="onClickMapOperator()">Map</button>
+    <button class="btn btn-primary" (click)="onClickConcatMapOperator()">ConcatMap</button>
+    <button class="btn btn-primary" (click)="onClickMergeMapOperator()">MergeMap</button>
+    <button class="btn btn-primary" (click)="onClickSwitchMapOperator()">SwitchMap</button>
+    <button class="btn btn-primary" (click)="onClickTakeOperator()">Take</button>
+    <button class="btn btn-primary" (click)="onClickTakeUntilOperator()">TakeUntil</button>
+    <button class="btn btn-primary" (click)="onClickForkJoinOperator()">ForkJoin</button>
+    <!-- <div class="col-sm-offset-2 col-sm-10"> -->
+    <button type="button" class="btn btn-default" disabled (click)="onClickForkJoinOperator()">
+        Debounce Time
+    </button><br><br>
+
+
+    <!-- </div> -->
+    <hr />
+
+    <!-- <div class="col-sm-offset-2 col-sm-10"> -->
+    <button type="button" class="btn btn-primary" style="width: 200px;" (click)="onClickShareReplyOperator()">
+        Share Reply
+    </button>
+</div>
+<input class="input" type="text" [(ngModel)]="searchText" placeholder="Search breed" (keyup)="search()" />
+
+{{ breeds$ | async | json }}
+<hr />
+
+<!-- </div> -->
