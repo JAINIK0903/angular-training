@@ -1,0 +1,15 @@
+<div class="card p-3 h-100">
+    <p class="text-center">{{ product.name }}</p>
+    <p class="text-center">{{ product.description | null }}</p>
+    <p class="text-center">{{ product.price | currency : "INR" }}</p>
+    <div class="mb-3 input-group">
+        <button type="button" class="btn btn-outline-secondary" (click)="decrement()">
+            <i class="fa-solid fa-minus"></i>
+        </button>
+        <input type="number" class="form-control" min="0" [(ngModel)]="qty" readonly />
+        <button type="button" class="btn btn-outline-secondary" (click)="increment()">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </div>
+    <button class="btn btn-primary">Add To Cart</button>
+</div>

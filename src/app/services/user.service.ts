@@ -3,6 +3,7 @@ import {
   AngularFireDatabase,
   AngularFireList,
 } from '@angular/fire/compat/database';
+import { map } from 'rxjs';
 
 // interfaces
 import { IUser } from '../interfaces/user';
@@ -17,12 +18,25 @@ export class UserService {
     this.usersRef = _db.list('/users');
   }
 
-  public get() {
-    return this.usersRef.valueChanges();
+  public getAll() {
+    return this.usersRef.snapshotChanges().pipe(
+      map((res: any) => {
+        const userList: IUser[] = [];
+        if (res != null) {
+          res.forEach((item: any) => {
+            userList.push({ id: item.key, ...item.payload.val() });
+          });
+        }
+        return userList;
+      })
+    );
   }
 
   public create(user: IUser) {
-    console.log('create');
     return this.usersRef.push(user);
+  }
+
+  public delete(key: string) {
+    return this.usersRef.remove(key);
   }
 }

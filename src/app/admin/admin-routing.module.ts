@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // components
 import { AdminComponent } from './admin/admin.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 const routes: Routes = [
     {
@@ -18,6 +19,10 @@ const routes: Routes = [
             {
                 path: 'products',
                 component: AdminProductsComponent,
+            },
+            {
+                path: 'users',
+                component: AdminUsersComponent,
             },
         ],
     },

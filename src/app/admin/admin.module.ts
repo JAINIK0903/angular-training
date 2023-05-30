@@ -9,9 +9,10 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
 import { AddProductComponent } from './add-product/add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
-  declarations: [AdminComponent, AdminProductsComponent, AddProductComponent, EditProductComponent],
+  declarations: [AdminComponent, AdminProductsComponent, AddProductComponent, EditProductComponent, AdminUsersComponent],
   imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule],
   exports: [],
 })

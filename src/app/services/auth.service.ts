@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { IUser } from '../interfaces/user';
 import { UserService } from './user.service';
 
@@ -17,7 +16,7 @@ export class AuthService {
   ) {
     this._fireAuth.onAuthStateChanged((user) => {
       if (user) {
-        this._userService.get().subscribe({
+        this._userService.getAll().subscribe({
           next: (users) => {
             const userData = users.filter((u) => u.uid === user.uid)[0];
             this.user$.next({
@@ -25,10 +24,12 @@ export class AuthService {
               email: userData.email,
               role: userData.role,
             });
+            localStorage.setItem('user', JSON.stringify(userData));
           },
         });
       } else {
         this.user$.next(null);
+        localStorage.removeItem('user');
       }
     });
   }

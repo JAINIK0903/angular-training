@@ -12,12 +12,13 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment.development';
 import { AdminModule } from './admin/admin.module';
+import { NullPipe } from './product/pipes/null.pipe';
 
 //Environment
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

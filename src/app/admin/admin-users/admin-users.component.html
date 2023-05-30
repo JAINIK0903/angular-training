@@ -1,0 +1,33 @@
+<p class="text-center" *ngIf="isFetching">Fetching users...</p>
+<p class="text-center" *ngIf="!isFetching && isError">
+    Some error occurred while fetching users.
+</p>
+<p class="text-center" *ngIf="!isFetching && !isError && userList.length === 0">
+    There are no users.
+</p>
+
+<table class="table" *ngIf="!isFetching && !isError && userList.length > 0">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+                <button class="btn text-primary">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn text-danger" (click)="deleteUser(user.uid!)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

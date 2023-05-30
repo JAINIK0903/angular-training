@@ -1,11 +1,14 @@
-//Modules
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//Components
+// components
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+
+// guards
+import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   {
@@ -27,14 +30,20 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canLoad: [RoleGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
+  {
+    path: 'products',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./product/product.module').then((m) => m.ProductModule),
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

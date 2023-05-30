@@ -1,0 +1,7 @@
+<section class="p-4">
+    <ul class="list-unstyled row">
+        <li class="col-3" *ngFor="let product of productList">
+            <app-product-card [product]="product" />
+        </li>
+    </ul>
+</section>
