@@ -1,0 +1,31 @@
+<nav class="navbar bg-dark navbar-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">Online Shopping</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ng-container *ngFor="let routerLink of routerLinkList">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="{{ routerLink.href }}" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            {{ routerLink.title }}
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+            <form class="ms-3 d-flex" role="search" *ngIf="isLoggedIn">
+                <input class="form-control me-2" type="search" placeholder="Search products" aria-label="Search" />
+                <button class="btn btn-outline-light" type="button">Search</button>
+            </form>
+            <div class="ms-3 d-flex align-items-center" *ngIf="isLoggedIn">
+                <span class="me-2 text-white">{{ userEmail }}</span>
+                <button class="btn btn-light" type="button" (click)="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,40 @@
+<form class="p-3" [formGroup]="addProductForm">
+    <!-- Name -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter product name" id="name" formControlName="name" />
+    </div>
+    <!-- Description -->
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" placeholder="Enter product description" id="description"
+            formControlName="description" />
+    </div>
+    <div class="mb-3 row">
+        <!-- Quantity -->
+        <div class="col-6">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" min="0" placeholder="Enter product quantity" id="quantity"
+                formControlName="quantity" />
+        </div>
+        <!-- Price -->
+        <div class="col-6">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" min="0" placeholder="Enter product price" id="price"
+                formControlName="price" />
+        </div>
+    </div>
+    <!-- Actions -->
+    <div class="d-flex justify-content-end">
+        <!-- Add -->
+        <button *ngIf="!editProduct" type="submit" class="btn btn-primary" [disabled]="addProductForm.invalid"
+            (click)="addProduct()">
+            Add Product
+        </button>
+        <!-- Update -->
+        <button *ngIf="editProduct" type="submit" class="btn btn-primary" [disabled]="addProductForm.invalid"
+            (click)="updateProduct()">
+            Update Product
+        </button>
+    </div>
+</form>

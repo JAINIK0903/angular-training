@@ -1,0 +1,54 @@
+<section class="p-4 d-flex justify-content-center align-items-center">
+    <!-- Login Form -->
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <!-- Title -->
+        <h3 class="mb-3 text-center">Login</h3>
+        <!-- Error Alert -->
+        <div *ngIf="error"
+            class="alert alert-danger mx-auto mb-3 p-3 d-flex justify-content-between align-items-baseline"
+            role="alert">
+            <div class="d-flex align-items-baseline">
+                <i class="me-2 fa-solid fa-triangle-exclamation"></i>
+                {{ error }}
+            </div>
+            <button type="button" class="btn-dismiss-alert" (click)="dismissAlert()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Email Control -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Enter your email" id="email" name="email" ngModel
+                #email="ngModel" required [pattern]="emailRegex" />
+            <div class="error" *ngIf="email.invalid && email.touched">
+                <span *ngIf="(email?.errors)!['required']">Email is required.</span>
+                <span *ngIf="(email?.errors)!['pattern']">
+                    Email address is invalid.
+                </span>
+            </div>
+        </div>
+        <!-- Password Control -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter your password" id="password" name="password"
+                ngModel #password="ngModel" required />
+            <div class="error" *ngIf="password.invalid && password.touched">
+                <span *ngIf="(password?.errors)!['required']">
+                    Password is required.
+                </span>
+            </div>
+        </div>
+        <!-- Form Actions -->
+        <div>
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <!-- Register -->
+                <a routerLink="/">Forgot password?</a>
+                <!-- Login -->
+                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+                    Login
+                </button>
+            </div>
+            <a class="link" routerLink="/register" (click)="onClickOfRegister()">Not a member? Register</a>
+        </div>
+    </form>
+</section>

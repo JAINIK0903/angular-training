@@ -1,0 +1,28 @@
+form {
+    width: 100%;
+    max-width: 450px;
+
+    input.ng-touched.ng-invalid {
+        border: 1px solid #dc3545;
+    }
+
+    div.error {
+        margin-top: 4px;
+        color: #dc3545;
+        font-size: 14px;
+    }
+
+    .btn-dismiss-alert {
+        background-color: transparent;
+        border: none;
+        color: #555;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+.link1 {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

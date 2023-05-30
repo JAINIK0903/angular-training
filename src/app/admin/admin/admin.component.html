@@ -1,0 +1,12 @@
+<section class="p-4">
+    <ul class="mb-3 nav nav-tabs">
+        <li class="nav-item" *ngFor="let routerLink of routerLinkList">
+            <a class="nav-link" [routerLink]="routerLink.href" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                {{ routerLink.title }}
+            </a>
+        </li>
+    </ul>
+    <router-outlet />
+
+</section>
