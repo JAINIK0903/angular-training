@@ -1,33 +1,40 @@
-<p class="text-center" *ngIf="isFetching">Fetching users...</p>
-<p class="text-center" *ngIf="!isFetching && isError">
-    Some error occurred while fetching users.
-</p>
-<p class="text-center" *ngIf="!isFetching && !isError && userList.length === 0">
-    There are no users.
-</p>
+<!-- Modal -->
+<app-edit-product *ngIf="isModal" [title]="'Update User'" (modalClose)="closeModal()">
+    <app-edit-user [editUser]="editUser" (modalClose)="closeModal()" />
+</app-edit-product>
 
-<table class="table" *ngIf="!isFetching && !isError && userList.length > 0">
-    <thead>
-        <tr>
-            <th>Email</th>
-            <th>Role</th>
-            <th colspan="2">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of userList">
-            <td>{{ user.email }}</td>
-            <td>{{ user.role }}</td>
-            <td>
-                <button class="btn text-primary">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-            </td>
-            <td>
-                <button class="btn text-danger" (click)="deleteUser(user.uid!)">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<section>
+    <p class="text-center" *ngIf="isFetching">Fetching users...</p>
+    <p class="text-center" *ngIf="!isFetching && isError">
+        Some error occurred while fetching users.
+    </p>
+    <p class="text-center" *ngIf="!isFetching && !isError && userList.length === 0">
+        There are no users.
+    </p>
+
+    <table class="table table-hover" *ngIf="!isFetching && !isError && userList.length > 0">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let user of userList">
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <button class="p-0 btn text-primary" (click)="onUpdate(user)">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="p-0 btn text-danger" (click)="deleteUser(user.id!)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -36,6 +36,10 @@ export class UserService {
     return this.usersRef.push(user);
   }
 
+  public updateUser(key: string, user: IUser) {
+    return this.usersRef.update(key, user);
+  }
+
   public delete(key: string) {
     return this.usersRef.remove(key);
   }

@@ -1,0 +1,22 @@
+<form class="p-3" [formGroup]="editUserForm" (ngSubmit)="updateUser()">
+    <!-- Email -->
+    <!-- <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" class="form-control" placeholder="Enter user email" id="email" formControlName="email" />
+    </div> -->
+    <!-- Role -->
+    <div class="mb-3">
+        <label for="role">Role</label>
+        <select class="form-select" id="role" formControlName="role">
+            <option value="customer">Customer</option>
+            <option value="admin">Admin</option>
+        </select>
+    </div>
+    <!-- Actions -->
+    <div class="d-flex justify-content-end">
+        <!-- Update -->
+        <button *ngIf="editUser" type="submit" class="btn btn-primary" [disabled]="editUserForm.invalid">
+            Update User
+        </button>
+    </div>
+</form>

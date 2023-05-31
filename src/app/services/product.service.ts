@@ -36,7 +36,7 @@ export class ProductService {
     return this.productsRef.push(product);
   }
 
-  public update(key: string, product: IProduct) {
+  public updateProduct(key: string, product: IProduct) {
     return this.productsRef.update(key, product);
   }
 

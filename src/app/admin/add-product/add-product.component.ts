@@ -23,21 +23,30 @@ export class AddProductComponent implements OnInit {
     this.initializeForm();
     if (this.editProduct) {
       this.editId = this.editProduct.id;
-      this.addProductForm.setValue({
-        name: this.editProduct.name,
-        description: this.editProduct.description ?? null,
-        quantity: this.editProduct.quantity,
-        price: this.editProduct.price,
-      });
+      // this.addProductForm.setValue({
+      //   name: this.editProduct.name,
+      //   description: this.editProduct.description ?? null,
+      //   quantity: this.editProduct.quantity,
+      //   price: this.editProduct.price,
+      // });
     }
   }
 
   public initializeForm(): void {
     this.addProductForm = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      description: new FormControl(null),
-      quantity: new FormControl(null, [Validators.required, Validators.min(0)]),
-      price: new FormControl(null, [Validators.required, Validators.min(0)]),
+      name: new FormControl(
+        this.editProduct?.name ?? null,
+        Validators.required
+      ),
+      description: new FormControl(this.editProduct?.description ?? null),
+      quantity: new FormControl(this.editProduct?.quantity ?? null, [
+        Validators.required,
+        Validators.min(0),
+      ]),
+      price: new FormControl(this.editProduct?.price ?? null, [
+        Validators.required,
+        Validators.min(0),
+      ]),
     });
   }
 
@@ -61,7 +70,7 @@ export class AddProductComponent implements OnInit {
       quantity: parseInt(this.addProductForm.value.quantity),
       price: parseInt(this.addProductForm.value.price),
     };
-    this._productService.update(this.editId!, product).then(() => {
+    this._productService.updateProduct(this.editId!, product).then(() => {
       this.modalClose.emit();
     });
   }

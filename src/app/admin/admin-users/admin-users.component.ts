@@ -15,6 +15,9 @@ export class AdminUsersComponent implements OnInit {
   public userList: IUser[] = [];
   public isFetching: boolean = true;
   public isError: boolean = false;
+  public isModal: boolean = false;
+  public isEdit: boolean = false;
+  public editUser!: IUser;
 
   constructor(private _userService: UserService) { }
 
@@ -36,6 +39,23 @@ export class AdminUsersComponent implements OnInit {
         this.isError = true;
       },
     });
+  }
+
+  public onUpdate(user: IUser): void {
+    this.isEdit = true;
+    this.editUser = user;
+    console.log(this.editUser);
+
+    this.openModal();
+  }
+
+  public openModal(): void {
+    this.isModal = true;
+  }
+
+  public closeModal(): void {
+    this.isModal = false;
+    this.isEdit = false;
   }
 
   public deleteUser(id: string): void {
