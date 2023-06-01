@@ -97,6 +97,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public logout(): void {
     if (confirm('Are you sure you want to logout?')) {
       this._authService.signOut().then(() => {
+        localStorage.removeItem("cart:");
         this._router.navigateByUrl('login');
       });
     }

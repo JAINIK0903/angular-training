@@ -13,6 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
   public productList: IProduct[] = [];
+  public addedItems: IProduct[] = [];
   public isFetching: boolean = true;
   public isError: boolean = false;
 

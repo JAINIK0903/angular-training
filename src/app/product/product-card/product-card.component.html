@@ -1,4 +1,4 @@
-<div class="card p-3 h-100">
+<div class="card p-3 h-100" scale=100 hover>
     <p class="text-center">{{ product.name }}</p>
     <p class="text-center">{{ product.description | null }}</p>
     <p class="text-center">{{ product.price | currency : "INR" }}</p>
@@ -11,5 +11,5 @@
             <i class="fa-solid fa-plus"></i>
         </button>
     </div>
-    <button class="btn btn-primary">Add To Cart</button>
+    <button class="btn btn-primary" (click)="onClickOfCart(product,qty)">Add To Cart</button>
 </div>

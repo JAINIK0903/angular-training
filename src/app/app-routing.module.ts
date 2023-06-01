@@ -9,6 +9,7 @@ import { RegisterComponent } from './auth/register/register.component';
 // guards
 import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';
+import { CartComponent } from './admin/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
     canLoad: [RoleGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   },
   {
     path: 'products',
