@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { ICart } from '../interfaces/cart';
+import { IProduct } from '../interfaces/product';
 export interface ICartItem {
   id: string;
   name: string;

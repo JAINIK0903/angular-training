@@ -1,6 +1,34 @@
-<div class="card p-3 h-100">
-    <p class="text-center">{{ cart.name }}</p>
-    <p class="text-center">{{ cart.description}}</p>
-    <p class="text-center">{{ cart.price | currency : "INR" }}
-        <button class="btn btn-primary">Place Order</button>
+<p class="text-center" *ngIf="!isLoading">loading...</p>
+<p class="text-center" *ngIf="!isLoading && isError">
+    Some error occurred while loading the products.
+</p>
+<ng-template #empty>
+
+    <p class="text-center">
+        There are no products in cart.
+    </p>
+</ng-template>
+<div class="container" *ngIf="cartList.length>0;else empty">
+    <table class="table table table-bordered text-center m-5">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let i of cartList">
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.price| currency : "INR" }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>
+                    <button class="p-0 btn text-danger" (click)="deleteItem(index)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
