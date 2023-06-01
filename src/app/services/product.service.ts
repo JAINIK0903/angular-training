@@ -3,7 +3,7 @@ import {
   AngularFireDatabase,
   AngularFireList,
 } from '@angular/fire/compat/database';
-import { map } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 // interfaces
 import { IProduct } from '../interfaces/product';
@@ -13,6 +13,7 @@ import { IProduct } from '../interfaces/product';
 })
 export class ProductService {
   productsRef!: AngularFireList<IProduct>;
+  public search$ = new BehaviorSubject<string>('');
 
   constructor(private _db: AngularFireDatabase) {
     this.productsRef = _db.list('products');

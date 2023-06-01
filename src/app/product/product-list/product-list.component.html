@@ -1,7 +1,10 @@
 <section class="p-4">
     <ul class="list-unstyled row">
-        <li class="col-3" *ngFor="let product of productList">
+        <li class="col-3" *ngFor="let product of productList | filterProductPipe:queryName">
             <app-product-card [product]="product" [addedItems]="addedItems" />
         </li>
     </ul>
 </section>
+<ng-template #noData>
+    <p>No data Found</p>
+</ng-template>

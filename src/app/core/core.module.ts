@@ -3,20 +3,24 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../product/pipes/filter.pipe';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    // FilterPipe
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, FormsModule
   ],
   exports: [
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    // FilterPipe
   ]
 })
 export class CoreModule { }

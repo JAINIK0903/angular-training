@@ -63,4 +63,6 @@ export class ProductCardComponent implements OnInit {
       window.alert("select atleast 1 quantity");
     }
   }
+
+
 }

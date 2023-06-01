@@ -17,8 +17,8 @@
                 </ng-container>
             </ul>
             <form class="ms-3 d-flex" role="search" *ngIf="isLoggedIn">
-                <input class="form-control me-2" type="search" placeholder="Search products" aria-label="Search" />
-                <button class="btn btn-outline-light" type="button">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search products" [(ngModel)]="filterText"
+                    [ngModelOptions]="{standalone: true}" (ngModelChange)="search($event)" aria-label="Search" />
             </form>
             <div class="ms-3 d-flex align-items-center" *ngIf="isLoggedIn">
                 <span class="me-2 text-white">{{ userEmail }}</span>

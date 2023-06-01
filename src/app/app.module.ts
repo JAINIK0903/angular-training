@@ -11,9 +11,6 @@ import { CoreModule } from './core/core.module';
 //Components
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment.development';
-import { AdminModule } from './admin/admin.module';
-import { NullPipe } from './product/pipes/null.pipe';
-import { HoverDirective } from './directives/hover.directive';
 
 //Environment
 
@@ -28,7 +25,7 @@ import { HoverDirective } from './directives/hover.directive';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AuthModule,
-    CoreModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription, debounceTime } from 'rxjs';
 
 // interfaces
 import { IProduct } from 'src/app/interfaces/product';
@@ -16,11 +17,17 @@ export class ProductListComponent implements OnInit {
   public addedItems: IProduct[] = [];
   public isFetching: boolean = true;
   public isError: boolean = false;
-
+  public searchSubscription!: Subscription;
+  public queryName: string = '';
   constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
+    this.searchSubscription = this._productService.search$.pipe(debounceTime(300)).subscribe({
+      next: (res) => {
+        this.queryName = res;
+      }
+    })
   }
 
   public getAllProducts(): void {

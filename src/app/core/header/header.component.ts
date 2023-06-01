@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 // services
 import { AuthService } from 'src/app/services/auth.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +16,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public isAdmin: boolean = false;
   public userEmail: string | undefined;
 
+  public filterText: string = '';
   public authSubscription!: Subscription;
 
   public routerLinkList: { title: string; href: string }[] = [];
 
-  constructor(private _router: Router, private _authService: AuthService) { }
+  constructor(private _router: Router, private _authService: AuthService, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.authSubscription = this._authService.user$.subscribe({
@@ -92,6 +94,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.authSubscription.unsubscribe();
+  }
+
+  public search(quearyText: string) {
+    this.productService.search$.next(quearyText);
   }
 
   public logout(): void {

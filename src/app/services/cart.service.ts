@@ -27,7 +27,9 @@ export class CartService {
     } else {
       cartList.push(product);
     }
-
     localStorage.setItem('carts', JSON.stringify(cartList));
+  }
+  public emptyCart() {
+    localStorage.removeItem('cart:');
   }
 }

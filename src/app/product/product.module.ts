@@ -9,9 +9,10 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { NullPipe } from './pipes/null.pipe';
 import { ProductRoutingModule } from './product.routing.module';
 import { HoverDirective } from '../directives/hover.directive';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  declarations: [ProductListComponent, ProductCardComponent, NullPipe, HoverDirective],
+  declarations: [ProductListComponent, ProductCardComponent, NullPipe, FilterPipe, HoverDirective],
   imports: [CommonModule, FormsModule, ProductRoutingModule],
 })
 export class ProductModule { }
