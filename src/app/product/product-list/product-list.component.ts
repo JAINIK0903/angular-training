@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, debounceTime } from 'rxjs';
 
 // interfaces
@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   public productList: IProduct[] = [];
   public addedItems: IProduct[] = [];
   public isFetching: boolean = true;
@@ -30,6 +30,7 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+
   public getAllProducts(): void {
     this.isFetching = true;
     this._productService.getAll().subscribe({
@@ -44,5 +45,9 @@ export class ProductListComponent implements OnInit {
         this.isError = true;
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    this.searchSubscription.unsubscribe();
   }
 }
